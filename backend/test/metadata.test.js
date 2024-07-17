@@ -7,8 +7,9 @@ const {
     START_PATH
 } = require('./dependencies');
 
-describe('Graph Creation', ()=>{
+describe('metadata', ()=>{
     const path = `${START_PATH}/db/connect`
+    // connect to database
     before((done)=>{
 
         agent
@@ -20,11 +21,9 @@ describe('Graph Creation', ()=>{
                 done();
             });
 
-        });
-
-
-
-    it('creates a graph', (done)=>{
+    });
+    // create graph
+    beforeEach((done)=>{
         const urlPath = `${START_PATH}/cypher/init`
         const nodesFilePath = [['Make', getPathForFile('make.csv')],['Model', getPathForFile('model.csv')]]
         const edgesFilePath = [['has_model', getPathForFile('has_model.csv')]]
@@ -46,8 +45,9 @@ describe('Graph Creation', ()=>{
                 
                 done();
             });
-    });
-    after((done)=>{
+    })
+    // drop graph / clean up
+    afterEach((done)=>{
         const urlPath = `${START_PATH}/cypher`
         const query = queries.drop_graph(connectionForm.database, true, (s)=>{
             return {cmd: s}
@@ -58,5 +58,23 @@ describe('Graph Creation', ()=>{
             .expect(200)
             .end(done)
     })
+
+    it("get metadata", (done)=>{
+        const urlPath = `${START_PATH}/db/meta`
+        agent
+            .post(urlPath)
+            .send({"currentGraph":connectionForm.database})
+            .end((err, res)=>{
+                expect(err).to.be.null;
+                expect(res.body).to.haveOwnProperty(connectionForm.database)
+                const nodes = res.body[connectionForm.database].nodes
+                const edges = res.body[connectionForm.database].edges
+                expect(nodes).lengthOf(2)
+                expect(edges).lengthOf(1)
+                done();
+
+            })
+    })
     
 });
+
