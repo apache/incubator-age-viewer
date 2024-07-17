@@ -82,7 +82,10 @@ const Frame = ({
             title="copy to editor"
             icon={faClone}
             size="s"
-            onClick={() => dispatch(setCommand(reqString))}
+            onClick={() => {
+              navigator.clipboard.writeText(reqString);
+              dispatch(setCommand(reqString));
+            }}
             style={{
               cursor: 'pointer',
             }}
