@@ -385,17 +385,22 @@ a[data-toggle="collapse"] {
     
     .sidebar-body {
         display: flex;
-        width: 100%;
+        width: 80%;
     }
 
     .horizontalLine {
-        visibility: collapse;
+        display: none;
     }
 
     .sidebar-item-disconnect {
         display: flex;
-        width: 75%;
+        flex-direction: column;
+        width: 100%;
         margin: 0 auto;
+    }
+
+    .sidebar-item-disconnect-outer {
+        width: 20%;
     }
 
     .sidebar-item-disconnect-buttons {
