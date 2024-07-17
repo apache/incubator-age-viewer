@@ -396,7 +396,6 @@ export const generateCytoscapeElement = (data, maxDataOfGraph, isNew) => {
       });
     });
   }
-  console.log('edge sizes', edgeLabelSizes);
   return {
     legend: {
       nodeLegend: sortByKey(nodeLegend),
