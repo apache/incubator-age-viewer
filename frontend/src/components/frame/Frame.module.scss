@@ -119,6 +119,7 @@
 .MetaChart {
   @extend .Chart;
   height: 517px;
+  border: 1px solid black;
 }
 
 .FlexContentWrapper {
