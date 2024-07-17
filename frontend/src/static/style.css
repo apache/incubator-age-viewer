@@ -247,7 +247,7 @@ a[data-toggle="collapse"] {
 }
 
 .input-style{
-    width: 97% !important;
+    width: 100% !important;
 }
 
 /* code mirror style bug fix code */
@@ -419,6 +419,10 @@ a[data-toggle="collapse"] {
 
 .btn-link {
     color: #c4c4c4 !important;
+    font-size: 13.5px;
+    /* background-color: red; */
+    padding-right: 10px;
+    padding-left: 10px;
 }
 .btn-link:hover {
     color: #2756FF !important;

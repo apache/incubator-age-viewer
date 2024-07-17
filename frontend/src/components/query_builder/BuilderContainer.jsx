@@ -50,6 +50,9 @@ const BuilderContainer = ({ open, setOpen, finder }) => {
       open={open}
       onClose={() => setOpen(!open)}
       placement="left"
+      headerStyle={{
+        backgroundColor: '#F9fafa',
+      }}
     >
       <Select
         id="graph-selection"
@@ -80,7 +83,7 @@ const BuilderContainer = ({ open, setOpen, finder }) => {
         />
       </div>
       <div id="submit-builder">
-        <Button size="sm" onClick={handleSubmit}>Submit</Button>
+        <Button id="btn-submit-builder" size="sm" onClick={handleSubmit}>Submit</Button>
       </div>
 
     </Drawer>

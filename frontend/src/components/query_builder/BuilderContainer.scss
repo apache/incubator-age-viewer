@@ -5,12 +5,22 @@
 
 .selection-builder{
     display: block;
-
 }
 
 #submit-builder{
     width: 100%;
     display: flex;
-    justify-content: right;
-    padding-top: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+}
+
+#btn-submit-builder:hover {
+    border-color: #007bff;
+}
+
+#btn-submit-builder {
+    width: 100%;
+    font-weight: Bold;
+    border: 1px solid #2A2A2A;
 }

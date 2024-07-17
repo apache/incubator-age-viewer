@@ -16,6 +16,7 @@ const BuilderSelection = ({ finder, setQuery, currentWord }) => {
       (element) => (
         <ListGroup.Item key={uuid()}>
           <Button
+            style={{ fontSize: '13px', minWidth: '90px' }}
             size="small"
             onClick={handleClick}
             data-val={element}

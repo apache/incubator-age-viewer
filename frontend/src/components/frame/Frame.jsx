@@ -85,6 +85,7 @@ const Frame = ({
             onClick={() => dispatch(setCommand(reqString))}
             style={{
               cursor: 'pointer',
+              marginLeft: '5px',
             }}
           />
         </div>
